@@ -1,0 +1,17 @@
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  outline: 0;
+
+  .toast-content {
+    padding: 8 * $size 18 * $size;
+    line-height: 18 * $size;
+    font-size: 16 * $size;
+    color: $white-color;
+    background-color: rgba($black-color, 0.68);
+    border-radius: 30 * $size;
+  }
+}

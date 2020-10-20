@@ -1,0 +1,217 @@
+// base.scss
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+b,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+em,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+input,
+label,
+li,
+ol,
+p,
+select,
+span,
+strong,
+textarea,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  line-height: 1.4 * $size;
+  font-family: $font-family;
+  font-size: 1.4 * $size;
+  color: $font-color;
+  background-color: $bg-color;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+  cursor: pointer;
+  outline: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  outline: none;
+}
+
+input,
+select,
+textarea {
+  height: 3 * $size;
+  padding: 0 1.5 * $size;
+  line-height: 3 * $size;
+  border: 1px solid #e4e4e4;
+  border-radius: 0.4 * $size;
+  flex: 1;
+
+  &:focus {
+    border-color: $base-color;
+  }
+}
+
+button {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+iframe {
+  border: 0;
+}
+
+
+::-webkit-scrollbar {
+  width: 0.6 * $size;
+  height: 0.6 * $size;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+// ::-webkit-scrollbar-track:hover {
+//   background-color: rgba(79, 111, 127, 0.05);
+// }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($dark-color, 0.5);
+  border: 0.3 * $size solid transparent;
+  // background-clip: padding-box;
+  // border-radius: 5px;
+
+  &:hover {
+    background-color: rgba($dark-color, 0.8);
+  }
+}
+
+@import "modules/animation.scss";
+@import "modules/iconfont.scss";
+@import "modules/loading.scss";
+@import "modules/button.scss";
+
+#app {
+  height: 100%;
+}
+
+.page {
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.flex {
+  flex: 1;
+}
+
+.tips-box {
+  line-height: 2.2 * $size;
+  color: $red-color;
+}
+
+.select-tool {
+  margin: 1 * $size;
+}
+
+.input-flex-group {
+  display: flex;
+  margin-bottom: 0.8 * $size;
+
+  .el-input {
+    &:first-child {
+      width: 12 * $size;
+      margin-right: 0.8 * $size;
+    }
+  }
+
+  .icon-box {
+    width: 6 * $size;
+
+    .icon {
+      padding: 0.3 * $size;
+      margin-left: 0.8 * $size;
+      color: $base-color;
+      cursor: pointer;
+      border: 0.1 * $size solid $base-color;
+      border-radius: 50%;
+    }
+
+    .i-minus {
+      color: $red-color;
+      border-color: $red-color;
+    }
+  }
+}

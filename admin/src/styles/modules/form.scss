@@ -1,0 +1,77 @@
+// modules/form.scss
+
+.section-form {
+  height: 0;
+  padding: 3 * $size 3 * $size 0  1 * $size;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $white-color;
+  // box-shadow: 0 $size * 0.1 $size * 0.1 0 rgba(0, 0, 0, 0.18);
+  flex: 1;
+
+  .panel {
+    margin-left: 2 * $size;
+  }
+
+  .panel-body {
+    padding-left: 0.5 * $size;
+    padding-bottom: 0;
+  }
+
+  .el-form-item {
+    display: flex;
+
+    &__label {
+      float: none;
+      width: 10.8 * $size;
+      padding-right: 0.8 * $size;
+    }
+
+    &__content {
+      width: 0;
+      flex: 1;
+    }
+  }
+}
+
+.form-btn {
+  padding: 1 * $size 3 * $size;
+  text-align: right;
+  border-top: 0.1 * $size solid $border-color;
+
+  .btn {
+    margin-left: 2.6 * $size;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.form-item-inline {
+  display: flex;
+
+  .el-form-item {
+    flex: 1;
+  }
+}
+
+.el-textarea__inner {
+  min-height: 8 * $size !important;
+}
+
+.el-form {
+  .tips-box {
+    padding: 0 1 * $size 2 * $size 1.5 * $size;
+  }
+
+  .el-cascader,
+  .el-select {
+    display: block;
+  }
+
+  .tips {
+    margin-left: 0.8 * $size;
+    color: $red-color;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "qiankun-vue",
+  "description": "基于qiankun微前端项目",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "install:common": "cd common && cnpm i",
+    "install:main": "cd main && cnpm i",
+    "install:web": "cd web && cnpm i",
+    "install:admin": "cd admin && cnpm i",
+    "install:html": "cd html && cnpm i",
+    "i:all": "npm-run-all --serial install:*",
+    "serve:main": "cd main && npm run serve",
+    "serve:web": "cd web && npm run serve",
+    "serve:admin": "cd admin && npm run serve",
+    "serve:html": "cd html && npm run serve",
+    "serve": "npm-run-all --parallel serve:*",
+    "build:common": "cd common && npm run build",
+    "build:main": "cd main && npm run build",
+    "build:web": "cd web && npm run build",
+    "build:admin": "cd main && npm run build",
+    "build": "npm-run-all --parallel build:*",
+    "lint:main": "cd main && npm run lint",
+    "lint:web": "cd web && npm run lint",
+    "lint:admin": "cd admin && npm run lint",
+    "lint": "npm-run-all --parallel lint:*",
+    "test:main": "cd main && npm run test:unit",
+    "test:web": "cd web && npm run test:unit",
+    "test:admin": "cd admin && npm run test:unit",
+    "test": "npm-run-all --parallel test:*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

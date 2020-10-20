@@ -1,0 +1,59 @@
+.upload-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  .drag-box {
+    display: inline-flex;
+    width: 18 * $size;
+    height: 18 * $size;
+    line-height: 1.8 * $size;
+    font-size: 1.8 * $size;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 0.2 * $size dashed $border-color;
+    border-radius: 0.8 * $size;
+
+    &.is-dragover,
+    &:hover {
+      border-color: $base-color;
+
+      .i-plus {
+        color: $base-color;
+      }
+    }
+  }
+
+  .drag-box {
+    width: 36 * $size;
+
+    span {
+      color: $base-color;
+    }
+  }
+
+  .i-plus {
+    line-height: 4 * $size;
+    font-size: 4 * $size;
+    color: $gray-color;
+  }
+
+  .upload-btn {
+    display: inline-block;
+    padding: 0.6 * $size 1 * $size;
+    font-size: 1.4 * $size;
+    color: $white-color;
+    background-color: $base-color;
+    border-radius: 0.3 * $size;
+  }
+
+  .file-name {
+    margin-left: 0.6 * $size;
+    color: $gray-color;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}

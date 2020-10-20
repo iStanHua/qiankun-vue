@@ -1,0 +1,246 @@
+// styles/base.scss
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+a,
+b,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+em,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+input,
+label,
+li,
+ol,
+p,
+select,
+span,
+strong,
+textarea,
+ul {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body,
+html {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  line-height: 14 * $size;
+  font-family: $font-family;
+  font-size: 14 * $size;
+  color: $font-color;
+  background-color: $bg-color;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+  cursor: pointer;
+  outline: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-modify: read-write-plaintext-only;
+}
+
+input::-webkit-input-speech-button {
+  display: none;
+}
+
+input[type="text"] {
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 100 * $size #fff inset !important;
+}
+
+button {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+iframe {
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6 * $size;
+  height: 6 * $size;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba($black-color, 0);
+  border-radius: 6 * $size;
+
+  &:hover {
+    background-color: rgba($black-color, 0.1);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($black-color, 0.2);
+  border-radius: 6 * $size;
+
+  &:hover {
+    background-color: rgba($black-color, 0.3);
+  }
+
+  &:active {
+    background-color: rgba($black-color, 0.4);
+  }
+}
+
+@import "modules/animation.scss";
+@import "modules/iconfont.scss";
+@import "modules/button.scss";
+@import "modules/input.scss";
+@import "modules/gridview.scss";
+
+.browser_notice {
+  width: 640 * $size;
+  padding: 60 * $size 20 * $size;
+  margin: 22% auto 0;
+  text-align: center;
+  background-color: $white-color;
+  box-shadow: 0 0 10 * $size 0 rgba($black-color, 0.1);
+
+  h2 {
+    margin: 20 * $size 0 38 * $size;
+    line-height: 32 * $size;
+    font-size: 32 * $size;
+  }
+
+  p {
+    margin-bottom: 20 * $size;
+    line-height: 22 * $size;
+    font-size: 16 * $size;
+    color: $dark-color;
+  }
+
+  a {
+    &:hover {
+      color: $base-color;
+    }
+  }
+}
+
+.page {
+  height: 100%;
+}
+
+.content {
+  margin-top: -60 * $size;
+  padding: 60 * $size 0 60 * $size;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+.section-box {
+  z-index: 1;
+  margin: 20 * $size 0;
+  background-color: $white-color;
+  box-shadow: 0 0 10 * $size rgba($black-color, 0.18);
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-box {
+    flex: 1;
+  }
+
+  .input {
+    border-width: 0;
+    box-shadow: none;
+  }
+}
+
+.flexbox {
+  display: flex;
+}
+
+.flex {
+  flex: 1;
+}
+
+.toolbar {
+  padding: 10 * $size;
+
+  a {
+    margin-right: 10 * $size;
+  }
+}

@@ -1,0 +1,37 @@
+.section-nav {
+  display: flex;
+  padding: 0 1.5 * $size;
+  line-height: 3.7 * $size;
+  font-size: 1.5 * $size;
+  background-color: $white-color;
+  border-bottom: 0.1 * $size solid $border-color;
+
+  .title {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 1;
+
+    span {
+      display: inline-block;
+      line-height: 1.6 * $size;
+      font-weight: 600;
+    }
+  }
+
+  .icon {
+    display: inline-flex;
+    margin-left: 1.5 * $size;
+    font-size: 1.4 * $size;
+    cursor: pointer;
+    align-items: center;
+
+    &:before {
+      margin-right: 0.3 * $size;
+      line-height: 1.9 * $size;
+      font-size: 1.8 * $size;
+      color: $base-color;
+    }
+  }
+}

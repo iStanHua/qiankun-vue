@@ -1,0 +1,15 @@
+{
+  "name": "html",
+  "description": "",
+  "version": "0.1.0",
+  "main": "index.html",
+  "private": true,
+  "scripts": {
+    "serve": "cross-env PORT=8003 http-server . --cors"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "http-server": "^0.12.3"
+  }
+}

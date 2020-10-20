@@ -1,0 +1,35 @@
+// styles/modules/gridview.scss
+
+.gridview {
+  display: flex;
+  @include setGridView(48);
+  flex-wrap: wrap;
+
+  .grid-item {
+    position: relative;
+
+    .img {
+      height: 180 * $size;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .name {
+      height: 16 * $size;
+      margin: 10 * $size 8 * $size 5 * $size;
+      line-height: 16 * $size;
+      font-size: 15 * $size;
+      @include ellipsis;
+    }
+
+    .desc {
+      height: 32 * $size;
+      margin: 8 * $size;
+      line-height: 16 * $size;
+      font-size: 14 * $size;
+      overflow: hidden;
+      word-break: break-all;
+    }
+  }
+}

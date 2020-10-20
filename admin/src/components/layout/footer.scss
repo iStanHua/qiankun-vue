@@ -1,0 +1,12 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 2 * $size $size;
+  margin-top: -5.8 * $size;
+
+  .copyright {
+    line-height: 1.8 * $size;
+    color: $white-color;
+    text-align: center;
+  }
+}

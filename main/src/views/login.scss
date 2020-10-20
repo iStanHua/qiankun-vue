@@ -1,0 +1,83 @@
+.login-page {
+  position: relative;
+  display: flex;
+  background: $base-color;
+  background: linear-gradient(to bottom, $base-color, #c5daed) no-repeat;
+  justify-content: center;
+  align-items: center;
+
+  .i-share {
+    position: absolute;
+    top: 6%;
+    right: 10%;
+    z-index: 10;
+    line-height: 20 * $size;
+    font-size: 20 * $size;
+    color: $white-color;
+    cursor: pointer;
+  }
+
+  .login-form {
+    position: relative;
+    z-index: 2;
+    width: 500 * $size;
+    padding: 38 * $size 50 * $size;
+    background-color: $white-color;
+    box-shadow: 0 0 10 * $size rgba($black-color, 0.28);
+  }
+
+  .form-title {
+    margin-bottom: 38 * $size;
+    line-height: 26 * $size;
+    font-size: 26 * $size;
+    color: $base-color;
+    text-align: center;
+    text-shadow: 0 3 * $size 0 rgba($black-color, 0.1);
+  }
+
+  .form-item {
+    position: relative;
+    margin-bottom: 20 * $size;
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 10 * $size;
+      z-index: 1;
+      line-height: 48 * $size;
+    }
+  }
+
+  .input {
+    height: 48 * $size;
+    padding-left: 36 * $size;
+    line-height: 48 * $size;
+    border-radius: 0;
+  }
+
+  .form-btn {
+    padding: 10 * $size 0;
+    border-width: 0;
+
+    .btn {
+      display: flex;
+      height: 48 * $size;
+      font-size: 18 * $size;
+      text-indent: 1 * $size;
+      border-radius: 0;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .login-form {
+      width: 310 * $size;
+      padding: 30 * $size 20 * $size 20 * $size;
+    }
+
+    .form-title {
+      margin-bottom: 30 * $size;
+      line-height: 22 * $size;
+      font-size: 22 * $size;
+    }
+  }
+}

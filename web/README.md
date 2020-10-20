@@ -1,10 +1,8 @@
-# qiankun-vue
-
-基于qiankun微前端项目
+# web
 
 ## Project setup
 ```
-npm run i:all
+npm install
 ```
 
 ### Compiles and hot-reloads for development
@@ -20,9 +18,4 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
 ```

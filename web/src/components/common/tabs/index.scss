@@ -1,0 +1,61 @@
+.tabs {
+  overflow: hidden;
+}
+
+.tab-header {
+  display: flex;
+  border-bottom: 1 * $size solid $border-color;
+}
+
+.tab-header-scroll {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+}
+
+.tab-item {
+  position: relative;
+  padding: 10 * $size 15 * $size;
+  line-height: 18 * $size;
+  font-size: 16 * $size;
+  color: $gray-color;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 3 * $size;
+    transition: all 300ms ease;
+    transform: scale(0);
+  }
+
+  &:hover {
+    color: $base-color;
+  }
+
+  &.tab-active {
+    color: $base-color;
+
+    &::after {
+      background-color: $base-color;
+      transform: scale(1);
+    }
+  }
+}
+
+.tab-panel {
+  display: none;
+
+  &.tab-active {
+    display: block;
+  }
+}
+
+.tab-content {
+  position: relative;
+}

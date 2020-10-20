@@ -1,0 +1,102 @@
+.layer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  background-color: rgba($black-color, 0.68);
+  outline: 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.layer-box {
+  position: relative;
+  display: flex;
+  width: 61.8 * $size;
+  max-height: 68%;
+  background-color: $white-color;
+  flex-direction: column;
+
+  .i-close {
+    font-size: 1.6 * $size;
+    cursor: pointer;
+
+    &:hover {
+      color: $red-color;
+    }
+  }
+
+  .layer-header {
+    display: flex;
+    padding: 1.2 * $size 1 * $size 1.2 * $size 2 * $size;
+    line-height: 2 * $size;
+    font-size: 1.6 * $size;
+    background-color: #ededed;
+
+    .layer-title {
+      width: 0;
+      flex: 1;
+    }
+  }
+
+  .layer-close {
+    position: absolute;
+    top: -1.5 * $size;
+    right: -1.5 *$size;
+    z-index: 1;
+    padding: 0.5 * $size;
+    color: $white-color;
+    background-color: rgba($black-color, 0.8);
+    border-radius: 100%;
+
+    &:hover {
+      color: $white-color;
+      background-color: $red-color;
+    }
+  }
+
+  .layer-content {
+    height: 0;
+    min-height: $size * 10;
+    padding: $size * 1.8;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .layer-footer {
+    padding: $size * 1;
+    text-align: right;
+    border-top: $size * 0.1 solid $border-color;
+
+    .btn {
+      margin-left: $size * 1;
+    }
+  }
+}
+
+.layer-component {
+  .layer-box {
+    min-height: 82%;
+    max-height: 90%;
+  }
+
+  .layer-content {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    flex-direction: column;
+
+    .main {
+      height: 100%;
+    }
+
+    .el-form-item {
+      margin-bottom: $size * 2.2;
+    }
+  }
+}
