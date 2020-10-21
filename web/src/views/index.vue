@@ -1,8 +1,8 @@
 <template>
-  <div class="content home-page">
-    <loading v-if="loading"></loading>
-    <empty></empty>
-  </div>
+  <wrapper class="content home-page">
+    <p>web</p>
+  </wrapper>
 </template>
+
 <style lang="scss" src="./index.scss"></style>
 <script src="./index.js"></script>

@@ -29,7 +29,6 @@ export default {
       this.$router.push('/')
     },
     onNavItem(i) {
-      console.log(i)
       const item = this.list[i]
       if (item.path === this.$route.path) return
       this.$router.push(item.path)

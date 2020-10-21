@@ -1,5 +1,3 @@
-import { debounce } from '@/utils'
-
 import Loading from '@/components/common/loading/index.vue'
 import Empty from '@/components/common/empty/index.vue'
 
@@ -19,7 +17,7 @@ export default {
     Empty
   },
   created() {
-    
+
   },
   mounted() {
   },

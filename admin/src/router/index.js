@@ -44,20 +44,21 @@ _routes.push({
       },
       component: HomePage
     },
-    {
-      path: 'auth',
-      meta: {
-        title: '没有访问权限'
-      },
-      component: () => import('@/views/common/auth.vue')
-    },
-    {
-      path: '*',
-      meta: {
-        title: '页面不存在'
-      },
-      component: () => import('@/views/common/notFound.vue')
-    }]
+    // {
+    //   path: 'auth',
+    //   meta: {
+    //     title: '没有访问权限'
+    //   },
+    //   component: () => import('@/views/common/auth.vue')
+    // },
+    // {
+    //   path: '*',
+    //   meta: {
+    //     title: '页面不存在'
+    //   },
+    //   component: () => import('@/views/common/notFound.vue')
+    // }
+  ]
 })
 
 const router = new Router({
