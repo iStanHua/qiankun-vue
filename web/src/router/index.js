@@ -58,8 +58,8 @@ routes.push({
 })
 
 const router = new Router({
-  base: window.__POWERED_BY_QIANKUN__ ? '/web' : '/',
   mode: 'history',
+  base: window.__POWERED_BY_QIANKUN__ ? '/web' : '/',
   routes: routes
 })
 

@@ -32,6 +32,8 @@ _routesCtx.keys().forEach(key => {
   })
 })
 
+console.log(window.__POWERED_BY_QIANKUN__ )
+
 _routes.push({
   path: '/',
   component: AdminLayout,
@@ -82,16 +84,18 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title
   }
 
-  if (to.meta.auth && !store.state.authToken) {
-    localStorage.setItem(REDIRECT_URL, to.path)
-    next('/login')
-  }
-  else {
-    if (to.path === '/login') {
-      localStorage.setItem(REDIRECT_URL, from.path)
-    }
-    next()
-  }
+  // if (to.meta.auth && !store.state.authToken) {
+  //   localStorage.setItem(REDIRECT_URL, to.path)
+  //   next('/login')
+  // }
+  // else {
+  //   if (to.path === '/login') {
+  //     localStorage.setItem(REDIRECT_URL, from.path)
+  //   }
+  //   next()
+  // }
+  
+  next()
 })
 
 router.afterEach(() => {

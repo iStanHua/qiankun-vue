@@ -10,15 +10,10 @@ export default {
   computed: {
     userInfo() {
       return this.$store.state.userInfo || {}
-    },
-    // 短信余额
-    smsBalance() {
-      return this.$store.state.smsBalance || 0
     }
   },
   created() {
-    this.$store.dispatch('fetchUserInfo')
-    this.$store.dispatch('userBalance')
+    // this.$store.dispatch('fetchUserInfo')
   },
   methods: {
     onLogo() {

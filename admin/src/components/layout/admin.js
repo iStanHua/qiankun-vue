@@ -41,11 +41,14 @@ export default {
         }
       })
       return routes
+    },
+    isAlive() {
+      return !!this.$route.meta.alive
     }
   },
   created() {
-    this.$store.dispatch('setResource')
-    this.$store.dispatch('setDictionary')
+    // this.$store.dispatch('setResource')
+    // this.$store.dispatch('setDictionary')
   },
   beforeRouteEnter(to, from, next) {
     next(vm => {

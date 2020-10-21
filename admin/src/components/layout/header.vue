@@ -13,8 +13,6 @@
           <i class="el-icon-arrow-down el-icon--right"></i>
         </div>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item disabled>短信余额：{{ smsBalance }}</el-dropdown-item>
-          <el-dropdown-item command="info">个人信息</el-dropdown-item>
           <el-dropdown-item command="logout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>

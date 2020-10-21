@@ -4,7 +4,7 @@ import { ValidatePhoneNumber } from '@/utils/validate'
 import { MD5 } from '@/utils/md5'
 import { REDIRECT_URL } from '@/utils/variable'
 
-import { Login, UserInfo } from '@/api/user'
+import { Login } from '@/api/user'
 
 export default {
   name: 'LoginPage',
@@ -42,8 +42,8 @@ export default {
     // 分享
     onShare() {
       navigator.share && navigator.share({
-        title: 'STAN管理控制台登录',
-        text: `STAN管理控制台登录`,
+        title: '管理控制台登录',
+        text: `管理控制台登录`,
         url: location.href
       })
     },
