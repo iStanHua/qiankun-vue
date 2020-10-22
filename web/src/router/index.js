@@ -57,21 +57,4 @@ routes.push({
   ]
 })
 
-const router = new Router({
-  mode: 'history',
-  base: window.__POWERED_BY_QIANKUN__ ? '/web' : '/',
-  routes: routes
-})
-
-
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
-
-  next()
-})
-
-router.afterEach(() => {
-  window.scrollTo(0, 0)
-})
-
-export default router
+export default routes

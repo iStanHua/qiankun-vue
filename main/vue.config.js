@@ -6,6 +6,7 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 const { name } = require('./package.json')
 
 module.exports = {
+  transpileDependencies: ['common'],
   productionSourceMap: false,
   lintOnSave: false,
   filenameHashing: true,
@@ -51,6 +52,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        '@': resolve('src'),
         'vue$': 'vue/dist/vue.esm.js'
       }
     },
@@ -69,9 +71,6 @@ module.exports = {
       }
     }
   },
-  pluginOptions: {
-  },
-  parallel: require('os').cpus().length > 1,
   devServer: {
     open: true,
     hot: true,

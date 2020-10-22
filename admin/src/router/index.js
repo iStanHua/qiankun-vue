@@ -3,10 +3,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import store from '@/store'
-
-import { REDIRECT_URL } from '@/utils/variable'
-
 import AdminLayout from '@/components/layout/admin.vue'
 
 import HomePage from '@/views/index.vue'
@@ -23,18 +19,16 @@ Router.prototype.replace = function replace(location) {
 
 Vue.use(Router)
 
-let _routes = []
-const _routesCtx = require.context('./modules', true, /\.js$/i)
+let routes = []
+const routeCtx = require.context('./modules', true, /\.js$/i)
 
-_routesCtx.keys().forEach(key => {
-  _routesCtx(key).default.forEach(d => {
-    _routes.push(d)
+routeCtx.keys().forEach(key => {
+  routeCtx(key).default.forEach(c => {
+    routes.push(c)
   })
 })
 
-console.log(window.__POWERED_BY_QIANKUN__ )
-
-_routes.push({
+routes.push({
   path: '/',
   component: AdminLayout,
   children: [
@@ -42,7 +36,8 @@ _routes.push({
       path: '',
       meta: {
         title: '首页',
-        auth: true
+        alive: true,
+        fixed: true
       },
       component: HomePage
     },
@@ -63,43 +58,5 @@ _routes.push({
   ]
 })
 
-const router = new Router({
-  mode: 'history',
-  base: '/admin/',
-  routes: _routes
-})
 
-
-router.beforeEach((to, from, next) => {
-  if (to.params.type === 'add') {
-    document.title = `新增${to.meta.title}`
-  }
-  else if (to.params.type === 'update') {
-    document.title = `修改${to.meta.title}`
-  }
-  else if (to.params.type === 'view') {
-    document.title = `查看${to.meta.title}详情`
-  }
-  else {
-    document.title = to.meta.title
-  }
-
-  // if (to.meta.auth && !store.state.authToken) {
-  //   localStorage.setItem(REDIRECT_URL, to.path)
-  //   next('/login')
-  // }
-  // else {
-  //   if (to.path === '/login') {
-  //     localStorage.setItem(REDIRECT_URL, from.path)
-  //   }
-  //   next()
-  // }
-  
-  next()
-})
-
-router.afterEach(() => {
-  window.scrollTo(0, 0)
-})
-
-export default router
+export default routes

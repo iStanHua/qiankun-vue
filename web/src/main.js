@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 import App from './App.vue'
 
-import router from './router'
+import routes from './router'
 import store from './store'
 
 import './public-path'
@@ -19,7 +19,13 @@ Vue.config.productionTip = false
 let instance = null
 
 function render(props = {}) {
-  const { container } = props
+  const { container, routerBase } = props
+
+  const router = new Router({
+    base: window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL,
+    mode: 'history',
+    routes: routes
+  })
 
   instance = new Vue({
     router,
@@ -29,29 +35,33 @@ function render(props = {}) {
 }
 
 if (!window.__POWERED_BY_QIANKUN__) {
+  // 这里是子应用独立运行的环境，实现子应用的登录逻辑
+
   render()
 }
 
-function storeTest(props) {
-  props.onGlobalStateChange && props.onGlobalStateChange((value, prev) =>
-    console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev), true)
+// function storeTest(props) {
+//   props.onGlobalStateChange && props.onGlobalStateChange((value, prev) =>
+//     console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev), true)
 
-  props.setGlobalState &&
-    props.setGlobalState({
-      ignore: props.name,
-      user: {
-        name: props.name,
-      }
-    })
-}
+//   props.setGlobalState &&
+//     props.setGlobalState({
+//       ignore: props.name,
+//       user: {
+//         name: props.name,
+//       }
+//     })
+// }
 
 export async function bootstrap() {
   console.log('[vue] vue app bootstraped')
 }
 
 export async function mount(props) {
-  console.log('[vue] props from main framework', props);
-  storeTest(props)
+  console.log('[vue] props from main framework', props)
+
+  // storeTest(props)
+
   render(props)
 }
 

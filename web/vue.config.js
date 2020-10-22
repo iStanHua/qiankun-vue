@@ -6,6 +6,8 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 const { name } = require('./package.json')
 
 module.exports = {
+  publicPath: '/web',
+  transpileDependencies: ['common'],
   productionSourceMap: false,
   lintOnSave: false,
   filenameHashing: true,
@@ -51,12 +53,13 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
+        '@': resolve('src'),
         'vue$': 'vue/dist/vue.esm.js'
       }
     },
     output: {
       // 把子应用打包成 umd 库格式
-      library: `${name}-[name]`,
+      library: `${name}`,
       libraryTarget: 'umd',
       jsonpFunction: `webpackJsonp_${name}`,
     },
@@ -69,13 +72,10 @@ module.exports = {
       }
     }
   },
-  pluginOptions: {
-  },
-  parallel: require('os').cpus().length > 1,
   devServer: {
     hot: true,
     disableHostCheck: true,
-    port: 8001,
+    port: process.env.VUE_APP_PORT,
     overlay: {
       warnings: false,
       errors: true,

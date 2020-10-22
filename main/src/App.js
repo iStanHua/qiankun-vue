@@ -1,4 +1,3 @@
-
 import HeaderLayout from '@/components/layout/header.vue'
 import FooterLayout from '@/components/layout/footer.vue'
 
@@ -25,7 +24,8 @@ export default {
     FooterLayout
   },
   created() {
-
+  },
+  watch: {
   },
   methods: {
   }

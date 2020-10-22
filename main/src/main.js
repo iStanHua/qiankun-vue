@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import NProgress from "nprogress"
-import { registerMicroApps, initGlobalState, setDefaultMountApp, start, addGlobalUncaughtErrorHandler, runAfterFirstMounted } from "qiankun"
+import NProgress from 'nprogress'
+import { registerMicroApps, initGlobalState, setDefaultMountApp, start, addGlobalUncaughtErrorHandler, runAfterFirstMounted } from 'qiankun'
 
 import App from './App.vue'
 
@@ -10,7 +10,7 @@ import store from './store'
 import './registerServiceWorker'
 import './utils/mrem'
 
-import "nprogress/nprogress.css"
+import 'nprogress/nprogress.css'
 import './styles/base.scss'
 
 import Wrapper from './components/common/wrapper/index.vue'
@@ -28,9 +28,8 @@ let app = null
 function render({ loading } = {}) {
   if (!app) {
     app = new Vue({
-      el: "#app",
+      el: '#app',
       router,
-      store,
       data() {
         return {
           loading
@@ -60,39 +59,54 @@ function genActiveRule(routerPrefix) {
 // Step1 初始化应用（可选）
 render({ loading: true })
 
-const loader = loading => render({ loading })
+// 定义loader方法，loading改变时，将变量赋值给App.vue的data中的isLoading
+function loader(loading) {
+  if (app && app.$children) {
+    // instance.$children[0] 是App.vue，此时直接改动App.vue的isLoading
+    app.$children[0].isLoading = loading
+  }
+}
 
 // Step2 注册子应用
 registerMicroApps(
   [
     {
       name: 'web',
-      entry: '//localhost:8081',
+      entry: process.env.VUE_APP_WEB,
       container: '#app',
-      activeRule: '/web',
+      activeRule: genActiveRule('/web'),
       loader,
       props: {
-        name: 'web',
+        // 下发基础路由
+        routerBase: '/web',
+        // 下发getGlobalState方法
+        getGlobalState: store.getGlobalState
       }
     },
     {
       name: 'admin',
-      entry: '//localhost:8082',
+      entry: process.env.VUE_APP_ADMIN,
       container: '#app',
-      activeRule: '/admin',
+      activeRule: genActiveRule('/admin'),
       loader,
       props: {
-        name: 'admin',
+        // 下发基础路由
+        routerBase: '/admin',
+        // 下发getGlobalState方法
+        getGlobalState: store.getGlobalState
       }
     },
     {
       name: 'html',
-      entry: '//localhost:8083',
+      entry: process.env.VUE_APP_HTML,
       container: '#app',
-      activeRule: '/html',
+      activeRule: genActiveRule('/html'),
       loader,
       props: {
-        name: 'html',
+        // 下发基础路由
+        routerBase: '/html',
+        // 下发getGlobalState方法
+        getGlobalState: store.getGlobalState
       }
     }
   ],
@@ -125,6 +139,7 @@ setGlobalState({
     name: 'master',
   },
 })
+
 // Step3 设置默认进入的子应用
 // setDefaultMountApp('/web')
 
