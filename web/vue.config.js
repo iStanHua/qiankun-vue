@@ -1,17 +1,15 @@
 const TerserPlugin = require('terser-webpack-plugin')
-
 const path = require('path')
+
 const resolve = (dir) => path.join(__dirname, dir)
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
-const { name } = require('./package.json')
+const { name } = require('./package')
+const port = 9001
 
 module.exports = {
-  publicPath: '/web',
-  transpileDependencies: ['common'],
   productionSourceMap: false,
   lintOnSave: false,
   filenameHashing: true,
-
   configureWebpack: config => {
     if (IS_PROD) {
       const plugins = [];
@@ -75,7 +73,7 @@ module.exports = {
   devServer: {
     hot: true,
     disableHostCheck: true,
-    port: process.env.VUE_APP_PORT,
+    port,
     overlay: {
       warnings: false,
       errors: true,
@@ -83,10 +81,5 @@ module.exports = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8090'
-      }
-    }
   }
 }

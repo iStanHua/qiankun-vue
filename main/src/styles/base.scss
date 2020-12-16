@@ -163,12 +163,6 @@ iframe {
   }
 }
 
-@import "modules/animation.scss";
-@import "modules/iconfont.scss";
-@import "modules/button.scss";
-@import "modules/input.scss";
-@import "modules/gridview.scss";
-
 .browser_notice {
   width: 640 * $size;
   padding: 60 * $size 20 * $size;
@@ -194,53 +188,5 @@ iframe {
     &:hover {
       color: $base-color;
     }
-  }
-}
-
-.page {
-  height: 100%;
-}
-
-.content {
-  margin-top: -60 * $size;
-  padding: 60 * $size 0 60 * $size;
-  box-sizing: border-box;
-  min-height: 100%;
-}
-
-.section-box {
-  z-index: 1;
-  margin: 20 * $size 0;
-  background-color: $white-color;
-  box-shadow: 0 0 10 * $size rgba($black-color, 0.18);
-
-  .flex {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .input-box {
-    flex: 1;
-  }
-
-  .input {
-    border-width: 0;
-    box-shadow: none;
-  }
-}
-
-.flexbox {
-  display: flex;
-}
-
-.flex {
-  flex: 1;
-}
-
-.toolbar {
-  padding: 10 * $size;
-
-  a {
-    margin-right: 10 * $size;
   }
 }

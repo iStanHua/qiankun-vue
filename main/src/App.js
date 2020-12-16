@@ -1,11 +1,7 @@
-import HeaderLayout from '@/components/layout/header.vue'
-import FooterLayout from '@/components/layout/footer.vue'
-
 export default {
   name: 'App',
   data() {
-    return {
-    }
+    return {}
   },
   computed: {
     isIE() {
@@ -14,18 +10,9 @@ export default {
         return true
       else
         return false
-    },
-    isAlive() {
-      return !!this.$route.meta.alive
     }
   },
-  components: {
-    HeaderLayout,
-    FooterLayout
-  },
   created() {
-  },
-  watch: {
   },
   methods: {
   }

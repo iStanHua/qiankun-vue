@@ -1,25 +1,15 @@
 <template>
-  <div v-if="!isIE" id="app">
+  <div id="app">
     <router-view />
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-
-      }
-    },
-    computed: {
-      isIE() {
-        new RegExp('MSIE (\\d+\\.\\d+);').test(navigator.userAgent)
-        if (parseFloat(RegExp['$1']) < 10)
-          return true
-        else
-          return false
-      }
-    },
+<style lang="scss">
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
   }
-</script>
+</style>

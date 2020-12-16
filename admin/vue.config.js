@@ -1,17 +1,15 @@
 const TerserPlugin = require('terser-webpack-plugin')
-
 const path = require('path')
+
 const resolve = (dir) => path.join(__dirname, dir)
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
-const { name } = require('./package.json')
+const { name } = require('./package')
+const port = 9002
 
 module.exports = {
-  publicPath: '/admin',
-  transpileDependencies: ['common'],
   productionSourceMap: false,
   lintOnSave: false,
   filenameHashing: true,
-
   configureWebpack: config => {
     if (IS_PROD) {
       const plugins = [];
@@ -45,6 +43,10 @@ module.exports = {
       args[0].chunksSortMode = 'none'
       return args
     })
+
+    // 添加别名
+    config.resolve.alias
+      .set('@', resolve('src'))
   },
   configureWebpack: {
     resolve: {
@@ -71,18 +73,13 @@ module.exports = {
   devServer: {
     hot: true,
     disableHostCheck: true,
-    port: process.env.VUE_APP_PORT,
+    port,
     overlay: {
       warnings: false,
-      errors: true,
+      errors: true
     },
     headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8090'
-      }
+      'Access-Control-Allow-Origin': '*'
     }
   }
 }

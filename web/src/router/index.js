@@ -4,7 +4,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Layout from '@/components/layout/index.vue'
-import HomePage from '@/views/index.vue'
+
+import HomePage from '@/views/home.vue'
 
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -56,5 +57,6 @@ routes.push({
     // }
   ]
 })
+
 
 export default routes

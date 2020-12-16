@@ -5,46 +5,27 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "common": "file:../common",
-    "axios": "^0.20.0",
-    "core-js": "^3.6.5",
-    "register-service-worker": "^1.7.1",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0",
-    "js-cookie": "^2.2.1",
-    "blueimp-md5": "^2.18.0",
-    "vuedraggable": "^2.24.1",
-    "clipboard": "^2.0.6",
-    "js-base64": "^3.5.2",
-    "xlsx": "^0.16.6",
-    "vuex-persistedstate": "^3.1.0",
-    "secure-ls": "^1.2.6",
-    "autosize": "^4.0.2"
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",
     "@vue/cli-plugin-eslint": "^4.5.0",
-    "@vue/cli-plugin-pwa": "^4.5.0",
-    "@vue/cli-plugin-unit-jest": "^4.5.0",
     "@vue/cli-service": "^4.5.0",
     "@vue/eslint-config-standard": "^5.1.2",
-    "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.11",
-    "terser-webpack-plugin": "^4.2.2"
+    "terser-webpack-plugin": "^5.0.3",
+    "cross-env": "^7.0.2"
   },
   "eslintConfig": {
     "root": true,
@@ -55,28 +36,18 @@
       "plugin:vue/essential",
       "@vue/standard"
     ],
+    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "jest": {
-    "preset": "@vue/cli-plugin-unit-jest"
-  }
+    "last 2 versions"
+  ]
 }

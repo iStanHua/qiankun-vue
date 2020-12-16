@@ -1,13 +1,6 @@
 <template>
-  <div v-if="!isIE" class="page" id="app">
-    <header-layout></header-layout>
-
-    <router-view v-if="!isAlive" />
-    <keep-alive>
-      <router-view v-if="isAlive" />
-    </keep-alive>
-
-    <footer-layout></footer-layout>
+  <div v-if="!isIE" id="main-app">
+    <div id="sub-app"></div>
   </div>
 </template>
 

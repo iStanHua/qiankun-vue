@@ -1,4 +1,4 @@
-# admin
+# app
 
 ## Project setup
 ```

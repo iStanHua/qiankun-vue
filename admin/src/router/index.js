@@ -5,7 +5,7 @@ import Router from 'vue-router'
 
 import AdminLayout from '@/components/layout/admin.vue'
 
-import HomePage from '@/views/index.vue'
+import HomePage from '@/views/home.vue'
 
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
