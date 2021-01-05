@@ -1,6 +1,6 @@
 import HeaderLayout from './header.vue'
 
-import { ArrayToTree } from '@/utils'
+// import { ArrayToTree } from '@/utils'
 
 export default {
   name: 'AdminLayout',
@@ -30,7 +30,8 @@ export default {
       else return [paths[0]]
     },
     resourceTree() {
-      return ArrayToTree(this.$store.state.resourceList || [], 0)
+      return []
+      // return ArrayToTree(this.$store.state.resourceList || [], 0)
     },
     resourceRoutes() {
       let routes = []

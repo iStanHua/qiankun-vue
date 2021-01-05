@@ -7,7 +7,7 @@
     <div class="header-nav">
       <el-dropdown v-if="userInfo" @command="onCommand">
         <div class="el-dropdown-link">
-          <img v-if="userInfo.avatar" :src="FILE_BASE_URL+userInfo.avatar" />
+          <img v-if="userInfo.avatar" :src="userInfo.avatar" />
           <img v-else src="@/assets/logo.png" />
           <span>{{ userInfo.name }}</span>
           <i class="el-icon-arrow-down el-icon--right"></i>

@@ -1,10 +1,10 @@
-import { FILE_BASE_URL } from '@/utils/variable'
+// import { FILE_BASE_URL } from '@/utils/variable'
 
 export default {
   name: 'HeaderLayout',
   data() {
     return {
-      FILE_BASE_URL
+      // FILE_BASE_URL
     }
   },
   computed: {

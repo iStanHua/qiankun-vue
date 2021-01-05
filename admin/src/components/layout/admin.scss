@@ -99,11 +99,6 @@
   }
 }
 
-@import "../../styles/modules/section-search.scss";
-@import "../../styles/modules/table.scss";
-@import "../../styles/modules/panel.scss";
-@import "../../styles/modules/form.scss";
-
 @include screen("", ($min-width/2)) {
   .layout-content {
     .section-tool {

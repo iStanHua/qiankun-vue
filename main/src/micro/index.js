@@ -8,13 +8,13 @@ import apps from './apps'
 // 注册子应用
 registerMicroApps(apps, {
   beforeLoad: (app) => {
-    console.log(`beforeLoad app:${app}`)
+    console.log(`beforeLoad app:`, app)
 
     NProgress.start()
     return Promise.resolve()
   },
   afterMount: (app) => {
-    console.log(`afterMount app:${app}`)
+    console.log(`afterMount app:`, app)
 
     NProgress.done()
     return Promise.resolve()

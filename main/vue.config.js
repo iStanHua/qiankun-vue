@@ -42,10 +42,6 @@ module.exports = {
       args[0].chunksSortMode = 'none'
       return args
     })
-
-    // 添加别名
-    config.resolve.alias
-      .set('@', resolve('src'))
   },
   configureWebpack: {
     resolve: {
