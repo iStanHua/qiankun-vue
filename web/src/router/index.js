@@ -1,23 +1,21 @@
-// router/index.js
-
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
-import Layout from '@/components/layout/index.vue'
+import Home from '../views/home.vue'
 
-import HomePage from '@/views/home.vue'
+Vue.use(VueRouter)
 
-const originalPush = Router.prototype.push
-Router.prototype.push = function push(location) {
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
-const originalReplace = Router.prototype.replace
-Router.prototype.replace = function replace(location) {
+const originalReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace(location) {
   return originalReplace.call(this, location).catch(err => err)
 }
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
 let routes = []
 const routeCtx = require.context('./modules', true, /\.js$/i)
@@ -28,35 +26,21 @@ routeCtx.keys().forEach(key => {
   })
 })
 
-routes.push({
-  path: '/',
-  component: Layout,
-  children: [
-    {
-      path: '',
-      meta: {
-        title: '首页',
-        alive: true,
-        fixed: true
-      },
-      component: HomePage
-    },
-    // {
-    //   path: 'auth',
-    //   meta: {
-    //     title: '没有访问权限'
-    //   },
-    //   component: () => import('@/views/common/auth.vue')
-    // },
-    // {
-    //   path: '*',
-    //   meta: {
-    //     title: '页面不存在'
-    //   },
-    //   component: () => import('@/views/common/notFound.vue')
-    // }
-  ]
-})
 
+routes.push(
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  }
+  // {
+  //   path: '/about',
+  //   name: 'About',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  // }
+)
 
 export default routes

@@ -1,12 +1,16 @@
 <template>
   <div class="home">
-    Admin子应用
+    <h2>Admin首页</h2>
+    <img alt="Vue logo" src="../assets/logo.png">
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+
+  }
 }
 </script>

@@ -1,14 +1,14 @@
 const apps = [
   {
     name: 'web',
-    entry: '//localhost:9001',
-    container: '#sub-app',
+    entry: 'http://localhost:9001',
+    container: '#app-container',
     activeRule: '/web'
   },
   {
     name: 'admin',
-    entry: '//localhost:9002',
-    container: '#sub-app',
+    entry: 'http://localhost:9002',
+    container: '#app-container',
     activeRule: '/admin'
   }
 ]

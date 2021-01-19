@@ -1,7 +1,11 @@
 // styles/variables.scss
 
-$font-family: Microsoft YaHei, PingFang SC, Helvetica, Arial, sans-serif;
-$size: 0.01rem;
+$font-family: Microsoft YaHei,
+PingFang SC,
+Helvetica,
+Arial,
+sans-serif;
+$size: 1px;
 $min-width: 1368px;
 
 // 主色调
@@ -88,15 +92,19 @@ $placeholder-color: #808080;
 
 // 定义media-queries的最小最大宽度
 @mixin screen($min, $max) {
-  @if $min== "" {
+  @if $min=="" {
     @media screen and (max-width: $max) {
       @content;
     }
-  } @else if $max== "" {
+  }
+
+  @else if $max=="" {
     @media screen and (min-width: $min) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @media screen and (min-width: $min) and (max-width: $max) {
       @content;
     }
@@ -112,11 +120,17 @@ $placeholder-color: #808080;
 
   @if $direction==top {
     border-bottom-color: $border-color;
-  } @else if $direction==right {
+  }
+
+  @else if $direction==right {
     border-left-color: $border-color;
-  } @else if $direction==bottom {
+  }
+
+  @else if $direction==bottom {
     border-top-color: $border-color;
-  } @else if $direction==left {
+  }
+
+  @else if $direction==left {
     border-right-color: $border-color;
   }
 }

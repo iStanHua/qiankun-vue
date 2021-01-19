@@ -22,7 +22,7 @@ registerMicroApps(apps, {
 })
 
 // 设置默认进入的子应用
-setDefaultMountApp('/web')
+// setDefaultMountApp('/web')
 
 // 添加全局的未捕获异常处理器
 addGlobalUncaughtErrorHandler((event) => {
