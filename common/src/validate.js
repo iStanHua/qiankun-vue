@@ -1,4 +1,4 @@
-// utils/validate.js 验证
+// src/validate.js 验证
 
 /**
  * 特殊字符

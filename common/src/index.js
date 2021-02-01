@@ -1,9 +1,9 @@
-// utils/index.js
+// src/index.js
 
 /**
  * 函数去抖
- * @param {Fouction} func 
- * @param {Number}  time 
+ * @param {Fouction} func
+ * @param {Number}  time
  */
 export function debounce(func, time) {
   let timer = null

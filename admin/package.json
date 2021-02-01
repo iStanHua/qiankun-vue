@@ -12,7 +12,8 @@
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0",
-    "element-ui": "^2.14.1"
+    "element-ui": "^2.14.1",
+    "common": "file:../common"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",

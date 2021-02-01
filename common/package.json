@@ -1,13 +1,12 @@
 {
   "name": "common",
   "description": "",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "axios": "^0.20.0",
-    "blueimp-md5": "^2.18.0"
+    "axios": "^0.20.0"
   },
   "devDependencies": {}
 }

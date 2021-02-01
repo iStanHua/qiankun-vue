@@ -1,17 +1,10 @@
-// utils/axios.js
+// src/axios.js
 
 import axios from 'axios'
-
-import { API_BASE_URL } from '@/utils/variable'
-
-import store from '@/store'
 
 // http request 拦截器
 axios.interceptors.request.use(
   config => {
-    if (store.state.authToken)
-      config.headers.common['Authorization'] = 'Bearer ' + store.state.authToken
-
     config.withCredentials = true
     return config
   }, (err) => {
@@ -20,23 +13,17 @@ axios.interceptors.request.use(
 )
 // http response 拦截器
 axios.interceptors.response.use((response) => {
-  if (response.data.code === 200) {
+  console.log(response)
+  if (response.status === 200) {
     return response.data
   }
-  // token 已过期，重定向到登录页面
-  else if (response.data.code == 401) {
-    console.error(response.data.msg)
-    setTimeout(() => {
-      store.dispatch('logout')
-    }, 500)
-  }
   else {
-    console.error(response.data && response.data.msg ? response.data.msg : '系统异常，请重试')
+    console.error(response.statusText ? response.statusText : '系统异常，请重试')
   }
   return Promise.reject(response.data)
 }, (err) => {
   if (err) {
-    console.error(err.response.statusText ? err.response.statusText : '系统异常，请重试')
+    console.error(response.statusText ? response.statusText : '系统异常，请重试')
   }
   else {
     console.error('系统异常，请重试')
@@ -51,8 +38,6 @@ axios.interceptors.response.use((response) => {
  * @param {Object} options.data   数据
  */
 export const fetch = (options = {}) => {
-  options.url && options.url.indexOf('/api/') === -1 && (options.url = API_BASE_URL + options.url)
-
   if (options.type) {
     options.method = String(options.type).toUpperCase()
     delete options.type
