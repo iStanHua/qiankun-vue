@@ -10,10 +10,12 @@ import './styles/base.scss'
 
 Vue.config.productionTip = false
 
-new Vue({
+const vm = new Vue({
   store,
   router,
   render: (h) => h(App)
 }).$mount('#app-main')
 
-startQiankun()
+startQiankun({
+  parent: vm
+})

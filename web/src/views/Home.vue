@@ -28,14 +28,19 @@
   }
 </script>
 <style>
+  .listview {
+    width: 768px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+
   .list-item {
     display: block;
-    padding: 10px;
-
+    padding: 10px 12px;
   }
 
   .list-item:hover {
     color: blue;
-
+    background-color: rgba(0, 0, 0, 0.1);
   }
 </style>

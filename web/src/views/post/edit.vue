@@ -3,11 +3,11 @@
     <div class="form">
       <div class="form-item">
         <label>标题</label>
-        <input type="text" v-model="detail.title">
+        <input type="text" class="input" v-model="detail.title">
       </div>
       <div class="form-item">
         <label>内容</label>
-        <textarea v-model="detail.body"></textarea>
+        <textarea class="input" v-model="detail.body"></textarea>
       </div>
       <div class="form-btn">
         <button @click="onSubmit">提交</button>
@@ -50,14 +50,20 @@
   }
 </script>
 <style>
-  .list-item {
-    display: block;
-    padding: 10px;
-
+  .form {
+    width: 768px;
+    margin: 0 auto;
+    background-color: #fff;
   }
 
-  .list-item:hover {
-    color: blue;
-
+  .form-item{
+    padding: 10px;
+  }
+  .form-item .input{
+    margin-top: 10px;
+  }
+  .form-btn{
+    padding: 10px;
+    text-align: center;
   }
 </style>

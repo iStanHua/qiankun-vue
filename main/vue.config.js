@@ -2,16 +2,15 @@ const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 
 const resolve = (dir) => path.join(__dirname, dir)
-const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
-const port = 9000
+const isProd = ['production', 'prod'].includes(process.env.NODE_ENV)
 
 module.exports = {
   productionSourceMap: false,
   lintOnSave: false,
   filenameHashing: true,
   configureWebpack: config => {
-    if (IS_PROD) {
-      const plugins = [];
+    const plugins = []
+    if (isProd) {
       plugins.push(
         new TerserPlugin({
           terserOptions: {
@@ -26,12 +25,11 @@ module.exports = {
           parallel: true
         })
       )
-
-      config.plugins = [
-        ...config.plugins,
-        ...plugins
-      ]
     }
+    config.plugins = [
+      ...config.plugins,
+      ...plugins
+    ]
   },
   chainWebpack: config => {
     // 修复HMR
@@ -63,7 +61,7 @@ module.exports = {
     open: true,
     hot: true,
     disableHostCheck: true,
-    port,
+    port: 9000,
     overlay: {
       warnings: false,
       errors: true

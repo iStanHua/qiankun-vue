@@ -70,9 +70,9 @@ html {
 }
 
 body {
-  line-height: 14 * $size;
+  line-height: 14px;
   font-family: $font-family;
-  font-size: 14 * $size;
+  font-size: 14px;
   color: $font-color;
   background-color: $bg-color;
 }
@@ -110,7 +110,7 @@ input[type="text"] {
 }
 
 input:-webkit-autofill {
-  box-shadow: 0 0 0 100 * $size #fff inset !important;
+  box-shadow: 0 0 0 100px #fff inset !important;
 }
 
 button {
@@ -137,13 +137,13 @@ iframe {
 }
 
 ::-webkit-scrollbar {
-  width: 6 * $size;
-  height: 6 * $size;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: rgba($black-color, 0);
-  border-radius: 6 * $size;
+  border-radius: 6px;
 
   &:hover {
     background-color: rgba($black-color, 0.1);
@@ -152,7 +152,7 @@ iframe {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba($black-color, 0.2);
-  border-radius: 6 * $size;
+  border-radius: 6px;
 
   &:hover {
     background-color: rgba($black-color, 0.3);
@@ -164,29 +164,83 @@ iframe {
 }
 
 .browser_notice {
-  width: 640 * $size;
-  padding: 60 * $size 20 * $size;
+  width: 640px;
+  padding: 60px 20px;
   margin: 22% auto 0;
   text-align: center;
   background-color: $white-color;
-  box-shadow: 0 0 10 * $size 0 rgba($black-color, 0.1);
+  box-shadow: 0 0 10px 0 rgba($black-color, 0.1);
 
   h2 {
-    margin: 20 * $size 0 38 * $size;
-    line-height: 32 * $size;
-    font-size: 32 * $size;
+    margin: 20px 0 38px;
+    line-height: 32px;
+    font-size: 32px;
   }
 
   p {
-    margin-bottom: 20 * $size;
-    line-height: 22 * $size;
-    font-size: 16 * $size;
+    margin-bottom: 20px;
+    line-height: 22px;
+    font-size: 16px;
     color: $dark-color;
   }
 
   a {
     &:hover {
-      color: $base-color;
+      color: blue;
     }
   }
+}
+
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 14px;
+  line-height: 22px;
+  background-clip: padding-box;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  transition: border-color 150ms ease-in-out, box-shadow 180ms ease-in-out;
+
+}
+
+.input:hover {
+  border-color: rgba(blue, 0.28);
+}
+
+.input:focus {
+  border-color: blue;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(blue, 0.38);
+}
+
+.input:disabled {
+  color: #666;
+  background-color: #f5f7fa;
+  cursor: not-allowed;
+}
+
+textarea.input {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+}
+
+button{
+  position: relative;
+  display: inline-flex;
+  padding: 8px 30px;
+  line-height: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+  background-color:blue;
+  border-radius: 20px;
+  align-items: center;
 }

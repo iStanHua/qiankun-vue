@@ -45,14 +45,15 @@
   }
 </script>
 <style>
-  .list-item {
-    display: block;
-    padding: 10px 50px;
-
+  p {
+    padding: 20px;
+    text-align: center;
   }
 
-  .list-item:hover {
+  p a {
     color: blue;
-
+  }
+  .list-item a{
+    margin: 0 6px;
   }
 </style>

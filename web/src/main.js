@@ -11,7 +11,9 @@ Vue.config.productionTip = false
 let router = null
 let instance = null
 
-function render({ container } = {}) {
+function render(props = {}) {
+  const { container, parent } = props
+
   router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? '/web' : '/',
     mode: 'history',
@@ -19,15 +21,14 @@ function render({ container } = {}) {
   })
 
   instance = new Vue({
+    parent,
     router,
     store,
     render: h => h(App),
   }).$mount(container ? container.querySelector('#app') : '#app')
 }
 
-if (!window.__POWERED_BY_QIANKUN__) {
-  render();
-}
+if (!window.__POWERED_BY_QIANKUN__) render()
 
 export async function bootstrap() {
   console.log('vue app bootstraped')
